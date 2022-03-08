@@ -12,12 +12,13 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
     zlib1g-dev \
     build-essential \
     python-pip \
-    libpython2.7-dev
+    libpython2.7-dev \
 
 #################
 # CUTADAPT      #
 #################
-RUN pip install cutadapt
+RUN pip install -U setuptools 
+    && pip install cutadapt
 
 ################
 #### SAMBAMBA ##

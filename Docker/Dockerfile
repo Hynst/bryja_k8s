@@ -17,7 +17,7 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
 #################
 # CUTADAPT      #
 #################
-RUN pip install -U setuptools 
+RUN pip install -U setuptools \
     && pip install cutadapt
 
 ################

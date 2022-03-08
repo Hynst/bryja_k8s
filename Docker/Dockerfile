@@ -1,5 +1,7 @@
 FROM ubuntu:hirsute
 
+ENV INSTALL_DIR="/opt"
+
 RUN apt-get update; export DEBIAN_FRONTEND=noninteractive; apt-get -y install \
    curl \
    wget \
@@ -21,3 +23,6 @@ RUN apt-get update; export DEBIAN_FRONTEND=noninteractive; apt-get -y install \
 
 RUN python3 -m pip install --user --upgrade cutadapt
 RUN python3 -m pip install --user --upgrade bwa
+
+RUN chown -R 1000:1000 /opt/*
+USER 1000

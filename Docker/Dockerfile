@@ -21,8 +21,8 @@ RUN apt-get update; export DEBIAN_FRONTEND=noninteractive; apt-get -y install \
    netcat-openbsd && \
    export DEBIAN_FRONTEND=noninteractive; apt-get -y install openssh-client python3-setuptools python3-pip openssh-sftp-server openssh-server
 
-RUN python3 -m pip install --user --upgrade cutadapt
-RUN python3 -m pip install --user --upgrade bwa
+RUN python3 -m pip install --install-option="--prefix=/opt" --user --upgrade cutadapt
+RUN python3 -m pip install --install-option="--prefix=/opt" --user --upgrade bwa
 
 RUN chown -R 1000:1000 /opt/*
 USER 1000

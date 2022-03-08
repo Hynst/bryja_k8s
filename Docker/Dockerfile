@@ -10,12 +10,13 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
     unzip \
     wget \
     zlib1g-dev \
-    python3-dev    
+    python3-setuptools \ 
+    python3-pip 
 
 #################
 # CUTADAPT      #
 #################
-RUN python3 -m pip install --user --upgrade cutadapt
+RUN python3 -m pip install truvari==3.0.0
 
 ################
 #### SAMBAMBA ##

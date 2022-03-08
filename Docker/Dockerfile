@@ -1,22 +1,34 @@
-FROM ubuntu:xenial AS builder
+FROM ubuntu:hirsute
 
-RUN apt-get update -y && apt-get install --no-install-recommends  -y \
-    bzip2 \
-    build-essential \
-    gcc-multilib \
-    libncurses5-dev \
-    libnss-sss \
-    tzdata \
-    unzip \
-    wget \
-    zlib1g-dev \
-    python3-setuptools \ 
-    python3-pip 
+ENV INSTALL_DIR="/opt"
+
+RUN apt-get update; export DEBIAN_FRONTEND=noninteractive; apt-get -y install \
+   curl \
+   wget \
+   rsync \
+   mc \
+   vim \
+   adduser \
+   mosh \
+   nano \
+   strace \
+   openjdk-11-jre-headless \
+   bzip2 \
+   build-essential \
+   gcc-multilib \
+   libncurses5-dev \
+   libnss-sss \
+   tzdata \
+   unzip \
+   zlib1g-dev \
+   autoconf \
+   netcat-openbsd && \
+   export DEBIAN_FRONTEND=noninteractive; apt-get -y install openssh-client python3-setuptools python3-pip openssh-sftp-server openssh-server
 
 #################
 # CUTADAPT      #
 #################
-RUN python3 -m pip install truvari
+RUN python3 -m pip install --user --upgrade cutadapt
 
 ################
 #### SAMBAMBA ##

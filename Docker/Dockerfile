@@ -12,7 +12,8 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
     zlib1g-dev \
     build-essential \
     python3-pip \
-    python3-dev
+    python3-dev \
+    python3-setuptools
 
 #################
 # CUTADAPT      #

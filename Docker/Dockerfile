@@ -9,12 +9,12 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
     tzdata \
     unzip \
     wget \
-    zlib1g-dev
+    zlib1g-dev \
+    python3-pip
 
 #################
 # CUTADAPT      #
 #################
-RUN pip install --upgrade pip
 RUN pip install cutadapt
 
 ################

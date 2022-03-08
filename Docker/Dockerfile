@@ -13,7 +13,8 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
     build-essential \
     python3-pip \
     python3-dev \
-    python3-setuptools
+    python3-setuptools \
+    python3-setuptools_scm
 
 #################
 # CUTADAPT      #

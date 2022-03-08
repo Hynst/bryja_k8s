@@ -10,13 +10,12 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
     unzip \
     wget \
     zlib1g-dev \
-    python3-pip \
-    python-setuptools
+    cutadapt
 
 #################
 # CUTADAPT      #
 #################
-RUN python3 -m pip install --user --upgrade cutadapt
+#RUN python3 -m pip install --user --upgrade cutadapt
 
 ################
 #### SAMBAMBA ##

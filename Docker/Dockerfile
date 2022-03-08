@@ -15,7 +15,7 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
 #################
 # CUTADAPT      #
 #################
-RUN pip install cutadapt
+RUN pip3 install cutadapt
 
 ################
 #### SAMBAMBA ##

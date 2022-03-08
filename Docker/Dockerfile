@@ -11,8 +11,8 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
     wget \
     zlib1g-dev \
     python-pip \
-    python-setuptools \
-    python-setuptools-scm
+    python3-setuptools \
+    python3-setuptools-scm
 
 #################
 # CUTADAPT      #

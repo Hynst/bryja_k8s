@@ -10,7 +10,7 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
     unzip \
     wget \
     zlib1g-dev \
-    python3.6 \
+    python3.7 \
     build-essential \
     python3-pip \
     python3-dev

@@ -38,4 +38,3 @@ FROM ubuntu:xenial
 
 COPY --from=builder /usr/lib/libhts.so* /usr/lib/
 COPY --from=builder /usr/local/bin/bwa /usr/local/bin/
-COPY --from=builder /usr/local/bin/sambamba /usr/local/bin/

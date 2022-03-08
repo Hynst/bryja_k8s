@@ -16,7 +16,7 @@ RUN apt-get update -y && apt-get install --no-install-recommends  -y \
 #################
 # CUTADAPT      #
 #################
-RUN python3 -m pip install truvari==3.0.0
+RUN python3 -m pip install truvari
 
 ################
 #### SAMBAMBA ##

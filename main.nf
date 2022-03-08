@@ -1,4 +1,4 @@
-params.str = 'Hello world!'
+params.proj = "Hello worlds"
 
 process splitLetters {
 

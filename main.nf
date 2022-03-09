@@ -1,4 +1,4 @@
-params.proj = "Hello worlds"
+params.str = 'Hello world'
 
 process splitLetters {
 
@@ -7,6 +7,9 @@ process splitLetters {
 
     """
     printf '${params.str}' | split -b 6 - chunk_
+    bwa -v
+    cutadapt -v
+    samtools -v
     """
 }
 

@@ -7,8 +7,8 @@ process splitLetters {
 
     """
     printf '${params.str}' | split -b 6 - chunk_
-    bwa -v
     cutadapt -v
+    bwa
     samtools -v
     """
 }

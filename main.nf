@@ -7,7 +7,7 @@ process splitLetters {
 
     """
     printf '${params.str}' | split -b 6 - chunk_
-    /opt/bin/cutadapt
+    cutadapt
     bwa
     samtools
     """

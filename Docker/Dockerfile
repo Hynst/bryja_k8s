@@ -10,6 +10,7 @@ RUN apt-get update; export DEBIAN_FRONTEND=noninteractive; apt-get -y install \
    mosh \
    strace \
    samtools \
+   cutadapt \
    bwa \
    openjdk-11-jre-headless \
    build-essential \
@@ -21,8 +22,6 @@ RUN apt-get update; export DEBIAN_FRONTEND=noninteractive; apt-get -y install \
    autoconf \
    netcat-openbsd && \
    export DEBIAN_FRONTEND=noninteractive; apt-get -y install openssh-client python3-setuptools python3-pip openssh-sftp-server openssh-server
-
-RUN python3 -m pip install --target="/opt" cutadapt
 
 RUN chown -R 1000:1000 /opt/*
 USER 1000

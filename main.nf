@@ -1,29 +1,29 @@
-params.str = 'Hello world'
+// Load params from nextflow.config
 
-process splitLetters {
+reference = '/mnt/shared/MedGen/bryja/reference/GRCm38.p6-93/index/BWA/GRCm38.p6-93'
+// R1 = params.fastq_R1
+// R2 = params.fastq_R2
+
+process cutadapt {
 
     output:
-    file 'chunk_*' into letters
-
+    file 'reference.txt' into ref
+    
     """
-    printf '${params.str}' | split -b 6 - chunk_
-    cutadapt -h
-    bwa mem
-    samtools
+    echo '${reference}' > reference.txt
     """
 }
 
-
-process convertToUpper {
+process bwa {
 
     input:
-    file x from letters.flatten()
-
+    file reference from ref.flatten()
+    
     output:
     stdout result
 
     """
-    cat $x | tr '[a-z]' '[A-Z]'
+    cat $reference
     """
 }
 

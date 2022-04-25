@@ -2,6 +2,7 @@
 
 SAMPLE_DIR=$1
 RUN_ID=$2
+SPECIES=$3
 
 touch /mnt/shared/MedGen/bryja/config/$RUN_ID.tsv
 
@@ -20,6 +21,6 @@ do
         R2_DIR_F=`echo $R2`
         echo $R1_DIR_F
         echo $R2_DIR_F
-	awk -v S_ID="$S_ID" -v FC_ID="$RUN_ID" -v R1="$R1_DIR_F" -v R2="$R2_DIR_F" 'BEGIN{print S_ID, "XX", "0", S_ID, FC_ID, R1, R2}' \
+	awk -v S_ID="$S_ID" -v FC_ID="$RUN_ID" -v R1="$R1_DIR_F" -v R2="$R2_DIR_F" -v SP="$SPECIES" 'BEGIN{print S_ID "_" SP, "XX", "0", S_ID "_" SP, FC_ID, R1, R2}' \
         | sed 's/ /\t/g' >> /mnt/shared/MedGen/bryja/config/$RUN_ID.tsv
 done
